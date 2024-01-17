@@ -3,9 +3,9 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
  */
-import {__} from '@wordpress/i18n';
+import { __ } from '@wordpress/i18n';
 
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -13,9 +13,8 @@ import {useEffect} from 'react';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import {useBlockProps, InspectorControls} from '@wordpress/block-editor';
-import {PanelBody, TextControl, ToggleControl} from '@wordpress/components';
-
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, TextControl, ToggleControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -33,66 +32,64 @@ import './editor.scss';
  *
  * @return {Element} Element to render.
  */
-export default function Edit({className, attributes, setAttributes, isSelected}) {
-	const {fallbackCurrentYear, showStartingYear, startingYear} = attributes;
+export default function Edit( {
+	className,
+	attributes,
+	setAttributes,
+	isSelected,
+} ) {
+	const { fallbackCurrentYear, showStartingYear, startingYear } = attributes;
 
 	// Get the current year and make sure it's a string.
 	const currentYear = new Date().getFullYear().toString();
 
-	useEffect(() => {
-		console.log({isSelected, className});
-	}, [isSelected, className]);
+	useEffect( () => {
+		console.log( { isSelected, className } );
+	}, [ isSelected, className ] );
 
 	// When the block loads, set the fallbackCurrentYear attribute to the
 	// current year if it's not already set.
-	useEffect(() => {
-		if (currentYear !== fallbackCurrentYear) {
-			setAttributes({fallbackCurrentYear: currentYear});
+	useEffect( () => {
+		if ( currentYear !== fallbackCurrentYear ) {
+			setAttributes( { fallbackCurrentYear: currentYear } );
 		}
-	}, [currentYear, fallbackCurrentYear, setAttributes]);
+	}, [ currentYear, fallbackCurrentYear, setAttributes ] );
 
 	let displayDate;
 
-	if (showStartingYear && startingYear) {
+	if ( showStartingYear && startingYear ) {
 		displayDate = startingYear + '–' + currentYear;
 	} else {
 		displayDate = currentYear;
 	}
 	return (
-
 		<>
 			<InspectorControls>
-				<PanelBody title={__('Settings', 'gutenberg-block')}>
+				<PanelBody title={ __( 'Settings', 'gutenberg-block' ) }>
 					<ToggleControl
-						checked={!!showStartingYear}
-						label={__(
-							'Show starting year',
-							'gutenberg-block'
-						)}
-						onChange={() =>
-							setAttributes({
-								showStartingYear: !showStartingYear,
-							})
+						checked={ !! showStartingYear }
+						label={ __( 'Show starting year', 'gutenberg-block' ) }
+						onChange={ () =>
+							setAttributes( {
+								showStartingYear: ! showStartingYear,
+							} )
 						}
 					/>
-					{showStartingYear && (
+					{ showStartingYear && (
 						<TextControl
-							label={__(
+							label={ __(
 								'Starting year',
 								'copyright-date-block'
-							)}
-							value={startingYear || ''}
-							onChange={(value) =>
-								setAttributes({startingYear: value})
+							) }
+							value={ startingYear || '' }
+							onChange={ ( value ) =>
+								setAttributes( { startingYear: value } )
 							}
 						/>
-					)}
+					) }
 				</PanelBody>
 			</InspectorControls>
-			<p {...useBlockProps()}>
-				@{displayDate}
-			</p>
+			<p { ...useBlockProps() }>@{ displayDate }</p>
 		</>
-
 	);
 }

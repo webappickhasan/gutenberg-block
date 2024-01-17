@@ -15,7 +15,5 @@ export default function save( { attributes } ) {
 		displayDate = fallbackCurrentYear;
 	}
 
-	return (
-		<p { ...useBlockProps.save() }>© { displayDate }</p>
-	);
+	return <p { ...useBlockProps.save() }>© { displayDate }</p>;
 }

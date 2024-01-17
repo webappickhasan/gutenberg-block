@@ -34,7 +34,5 @@ registerBlockType( metadata.name, {
 	 */
 	edit: Edit,
 	icon: calendarIcon,
-	save
+	save,
 } );
-
-

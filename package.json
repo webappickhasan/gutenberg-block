@@ -10,11 +10,17 @@
 		"format": "wp-scripts format",
 		"lint:css": "wp-scripts lint-style",
 		"lint:js": "wp-scripts lint-js",
+		"lint:php": "wp-scripts lint-php",
+		"test": "concurrently \"npm run lint:css\" \"npm run lint:js\" \"npm run lint:php\"",
+		"test2": "concurrently \"npm run lint:css\"",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --webpack-copy-php"
+		"start": "wp-scripts start --webpack-copy-php",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.19.0"
+		"@wordpress/scripts": "^26.19.0",
+		"concurrently": "^8.2.2",
+		"husky": "^8.0.3"
 	}
 }
