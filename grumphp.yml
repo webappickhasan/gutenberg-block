@@ -1,0 +1,42 @@
+grumphp:
+    ignore_unstaged_changes: false
+    tasks:
+        composer:
+            with_dependencies: false
+            strict: false
+        phpcs:
+            standard: CodeatCodingStandard
+            ignore_patterns: [
+                '/vendor/',
+                '/tests/',
+                '/assets/build',
+                '/node_modules/',
+                '/blocks/',
+                '/src/',
+                '/build/',
+            ]
+            whitelist_patterns: [
+                '/gutenberg-block.php',
+            ]
+        #        phpmd:
+        #            exclude: ['/vendor/', '/tests/', '/assets/build']
+#        phpstan:
+#            configuration: phpstan.neon
+#            triggered_by: [ 'php' ]
+#            ignore_patterns: [ '/vendor/' ]
+#        codeception:
+#            config_file: codeception.dist.yml
+#            fail_fast: false
+#            suite: wpunit
+        #            test: 'Override/PinterestTemplateTest.php'
+        #          [
+        #                Override/GoogleTemplateTest.php,
+        #                Override/FacebookTemplateTest.php,
+        #                Override/PinterestTemplateTest.php
+        #            ]
+        git_blacklist:
+            keywords:
+                - 'print_r('
+                - 'var_dump('
+            triggered_by: [ 'php' ]
+            ignore_patterns: [ ]
