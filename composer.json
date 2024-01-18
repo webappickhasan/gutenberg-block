@@ -1,12 +1,12 @@
 {
-    "require-dev": {
-        "phpro/grumphp": "^1.13",
-		"wp-coding-standards/wpcs":"^3.0"
+	"require-dev": {
+		"phpro/grumphp": "^1.13",
+		"wp-coding-standards/wpcs": "^3.0"
 	},
-    "config": {
-        "allow-plugins": {
-            "phpro/grumphp": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true
-        }
-    }
+	"config": {
+		"allow-plugins": {
+			"phpro/grumphp": true,
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
 }
