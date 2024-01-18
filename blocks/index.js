@@ -1,1 +1,1 @@
-import "./copy-right/index.js"
+import './copy-right/index.js';

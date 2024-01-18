@@ -1,5 +1,5 @@
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
-const path = require("path");
+const path = require( 'path' );
 
 //[ 'plugin-admin', 'plugin-block', 'plugin-public', 'plugin-settings' ].forEach(
 //	( script ) =>
@@ -11,9 +11,9 @@ const path = require("path");
 
 module.exports = {
 	...defaultConfig,
-	entry: "/blocks/index.js",
+	entry: '/blocks/index.js',
 	output: {
-		filename: "index.min.js",
-		path: path.resolve(__dirname, "webappick-production"),
-	}
+		filename: 'index.min.js',
+		path: path.resolve( __dirname, 'webappick-production' ),
+	},
 };
