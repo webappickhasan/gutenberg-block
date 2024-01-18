@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 function gutenberg_block_gutenberg_block_block_init() {
 
-	register_block_type( __DIR__ . '/build' );
+	register_block_type( __DIR__ . '/blocks/copy-right' );
 }
 
 add_action( 'init', 'gutenberg_block_gutenberg_block_block_init' );

@@ -15,7 +15,7 @@
 		"test2": "concurrently \"npm run lint:css\"",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --webpack-copy-php",
+		"start": "wp-scripts start --webpack-copy-php --hot",
 		"prepare": "husky install"
 	},
 	"devDependencies": {

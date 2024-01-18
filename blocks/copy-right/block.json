@@ -1,9 +1,9 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "create-block/gutenberg-block",
+	"name": "create-block/copy-right",
 	"version": "0.1.0",
-	"title": "Gutenberg Block",
+	"title": "copy-right",
 	"category": "widgets",
 	"icon": "heart",
 	"description": "Example block scaffolded with Create Block tool.",
@@ -30,7 +30,7 @@
 			"lineHeight": true
 		}
 	},
-	"textdomain": "gutenberg-block",
+	"textdomain": "copy-right",
 	"editorScript": "file:./index.js",
 	"render": "file:./render.php"
 }
